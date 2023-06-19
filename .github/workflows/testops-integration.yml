@@ -53,7 +53,7 @@ jobs:
             return `${context.repo.owner}/${context.repo.repo}/actions/workflows/${result.data.workflow_id}`
       - name: Download allurectl
         run: |
-          wget wget https://github.com/allure-framework/allurectl/releases/download/${{ github.event.inputs.ALLURECTL_RELEASE }}/allurectl_linux_amd64 -O ./allurectl -O ./allurectl
+          wget https://github.com/allure-framework/allurectl/releases/download/${{ github.event.inputs.ALLURECTL_RELEASE }}/allurectl_linux_amd64 -O ./allurectl
           chmod +x ./allurectl
       - name: Prepare TestPlan
         run: ./allurectl job-run plan --output-file ${ALLURE_TESTPLAN_PATH}
